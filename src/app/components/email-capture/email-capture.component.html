@@ -1,0 +1,81 @@
+<div class="max-w-md mx-auto">
+  <!-- Success State -->
+  <div *ngIf="isSubmitted" class="text-center animate-fade-in bg-white p-8 rounded-2xl shadow-2xl">
+    <div class="mb-6">
+      <mat-icon class="text-6xl text-primary">check_circle</mat-icon>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3">You're on the waitlist!</h3>
+    <p class="text-gray-600 mb-6">
+      Thank you! We'll notify you when Enable Sleep launches in early 2026.
+    </p>
+    <button mat-stroked-button color="primary" (click)="resetForm()" class="w-full">
+      Submit Another
+    </button>
+  </div>
+
+  <!-- Form State -->
+  <form *ngIf="!isSubmitted" [formGroup]="emailForm" (ngSubmit)="onSubmit()" class="space-y-4 bg-white p-8 rounded-2xl shadow-2xl">
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full mb-3">
+        <mat-icon class="text-primary text-sm">rocket_launch</mat-icon>
+        <span class="text-xs font-semibold text-primary">Launching Early 2026</span>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-2">Join the Waitlist</h3>
+      <p class="text-sm text-gray-600">Get early access and updates on our launch</p>
+    </div>
+
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Name (Optional)</mat-label>
+      <input matInput formControlName="name" placeholder="Dr. Jane Smith">
+      <mat-icon matPrefix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Email Address</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="jane@example.com" required>
+      <mat-icon matPrefix>email</mat-icon>
+      <mat-error *ngIf="emailForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="emailForm.get('email')?.hasError('email')">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Role (Optional)</mat-label>
+      <mat-select formControlName="role">
+        <mat-option [value]="''">Prefer not to say</mat-option>
+        <mat-option *ngFor="let role of roles" [value]="role.value">
+          {{ role.label }}
+        </mat-option>
+      </mat-select>
+      <mat-icon matPrefix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Questions or Notes (Optional)</mat-label>
+      <textarea matInput formControlName="notes"
+                placeholder="Any questions about Enable Sleep or your practice needs?"
+                rows="3"></textarea>
+      <mat-icon matPrefix>message</mat-icon>
+    </mat-form-field>
+
+    <div *ngIf="errorMessage" class="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded">
+      <mat-icon class="text-base">error</mat-icon>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit"
+            [disabled]="!emailForm.valid || isSubmitting" class="w-full h-12">
+      <mat-spinner *ngIf="isSubmitting" diameter="20" class="inline-block mr-2"></mat-spinner>
+      <span *ngIf="!isSubmitting">Join Waitlist</span>
+      <span *ngIf="isSubmitting">Submitting...</span>
+    </button>
+
+    <p class="text-xs text-gray-500 text-center flex items-center justify-center gap-1">
+      <mat-icon class="text-sm">lock</mat-icon>
+      <span>We respect your privacy. Unsubscribe anytime.</span>
+    </p>
+  </form>
+</div>

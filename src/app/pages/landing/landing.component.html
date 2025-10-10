@@ -1,0 +1,350 @@
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <!-- Logo -->
+    <div class="mb-12">
+      <h1 class="text-5xl font-extrabold text-white">Enable Sleep</h1>
+    </div>
+
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border
+                border-white/30 rounded-full mb-8">
+      <mat-icon class="text-primary">favorite</mat-icon>
+      <span class="font-semibold">Help close the diagnosis gap</span>
+    </div>
+
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight text-white">
+      A Clear Path for Dental Sleep Medicine
+    </h2>
+
+    <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+      Enable Sleep guides you through patient screening, documentation, and sleep physician collaboration—so you can confidently deliver oral appliance therapy.
+    </p>
+
+    <!-- Email Capture -->
+    <div class="mb-12">
+      <app-email-capture></app-email-capture>
+    </div>
+
+    <!-- Early Access Perks -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
+      <div class="flex items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20">
+        <mat-icon class="text-primary">flash_on</mat-icon>
+        <span class="text-sm font-medium">Early access when we launch</span>
+      </div>
+      <div class="flex items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20">
+        <mat-icon class="text-primary">school</mat-icon>
+        <span class="text-sm font-medium">Clinical education and support</span>
+      </div>
+      <div class="flex items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20">
+        <mat-icon class="text-primary">support_agent</mat-icon>
+        <span class="text-sm font-medium">Direct line to our team</span>
+      </div>
+      <div class="flex items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20">
+        <mat-icon class="text-primary">groups</mat-icon>
+        <span class="text-sm font-medium">Community of dental sleep practitioners</span>
+      </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 p-4 bg-white/10
+                rounded-xl border border-white/20">
+      <div class="flex items-center gap-2">
+        <mat-icon class="text-white">verified_user</mat-icon>
+        <span class="font-semibold text-sm">HIPAA-Compliant Platform</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <mat-icon class="text-white">local_hospital</mat-icon>
+        <span class="font-semibold text-sm">Built by Board-Certified Sleep Medicine Experts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Crisis Statistics -->
+<section class="py-16 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border-2
+                  border-primary/30 rounded-full mb-8">
+        <mat-icon class="text-primary text-2xl">trending_up</mat-icon>
+        <span class="text-lg font-bold text-primary">
+          It's likely 1 in 5 adults walking into your dental office suffers from sleep apnea
+        </span>
+      </div>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12">
+        As a Dentist you're positioned to help treat sleep apnea.<br>
+        But where do you start?
+      </h2>
+    </div>
+
+    <!-- Body Copy - Left Aligned -->
+    <div class="max-w-4xl mx-auto">
+      <div class="text-lg text-gray-700 space-y-6 text-left">
+        <p class="leading-relaxed">
+          Your patients mention they snore loudly. Their partners say they stop breathing at night. They're exhausted despite "sleeping" eight hours. And when you examine them, you see the clinical signs—narrow airways, large tongues, crowded oral cavities.
+        </p>
+        <p class="font-semibold text-gray-900 text-xl">
+          You know oral appliance therapy could transform their health and quality of life.
+        </p>
+        <p class="leading-relaxed">
+          But the path forward isn't clear:
+        </p>
+        <ul class="list-none space-y-3 pl-8">
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-xl">•</span>
+            <span class="italic text-gray-600">"What should I document at each visit?"</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-xl">•</span>
+            <span class="italic text-gray-600">"How do I connect with a sleep physician?"</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary font-bold text-xl">•</span>
+            <span class="italic text-gray-600">"What's my workflow from screening to treatment?"</span>
+          </li>
+        </ul>
+        <p class="font-semibold text-gray-900 text-xl pt-4">
+          The result? Many dentists avoid sleep medicine entirely, and millions of patients who could be helped remain undiagnosed.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div *ngFor="let stat of stats"
+           class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100
+                  hover:shadow-primary transition-all duration-300
+                  hover:-translate-y-1">
+        <div class="text-4xl font-extrabold text-primary mb-2">{{ stat.value }}</div>
+        <div class="text-gray-600 text-sm">{{ stat.label }}</div>
+      </div>
+    </div>
+
+    <!-- Source Citation -->
+    <div class="text-center mt-8">
+      <a href="https://www.mdpi.com/2227-9059/13/10/2413"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="text-sm text-gray-500 hover:text-primary transition-colors inline-flex items-center gap-1">
+        <mat-icon class="text-base">article</mat-icon>
+        Source: Recent systematic review and meta-analysis published in Biomedicines
+        <mat-icon class="text-base">open_in_new</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Financial Opportunity -->
+<section class="py-16 px-4 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border
+                  border-primary/30 rounded-full mb-6">
+        <mat-icon class="text-primary">attach_money</mat-icon>
+        <span class="text-sm font-semibold text-primary">The Practice Opportunity</span>
+      </div>
+
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+        A New Revenue Stream for Your Practice
+      </h2>
+
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Beyond helping patients, dental sleep medicine represents significant practice growth potential.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div *ngFor="let stat of financialStats"
+           class="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100
+                  hover:shadow-primary transition-all duration-300
+                  hover:-translate-y-1">
+        <div class="text-4xl font-extrabold text-accent-green mb-2">{{ stat.value }}</div>
+        <div class="text-gray-600 text-sm">{{ stat.label }}</div>
+      </div>
+    </div>
+
+    <!-- Additional Benefits -->
+    <div class="mt-12 max-w-4xl mx-auto">
+      <p class="text-lg font-semibold text-gray-900 mb-4">Plus:</p>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <mat-icon class="text-accent-green flex-shrink-0">check_circle</mat-icon>
+          <span class="text-gray-700">Patients require ongoing follow-up visits and adjustments</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <mat-icon class="text-accent-green flex-shrink-0">check_circle</mat-icon>
+          <span class="text-gray-700">Higher patient retention and satisfaction</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <mat-icon class="text-accent-green flex-shrink-0">check_circle</mat-icon>
+          <span class="text-gray-700">Referrals from grateful patients whose lives you've changed</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <mat-icon class="text-accent-green flex-shrink-0">check_circle</mat-icon>
+          <span class="text-gray-700">Differentiation from other practices in your area</span>
+        </li>
+      </ul>
+      <p class="text-lg font-semibold text-gray-900 mt-6">
+        The challenge isn't the opportunity—it's having a clear system to execute it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Problems Section -->
+<section class="py-16 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border
+                  border-primary/30 rounded-full mb-6">
+        <mat-icon class="text-primary">block</mat-icon>
+        <span class="text-sm font-semibold text-primary">The Barriers</span>
+      </div>
+
+      <h2 class="text-4xl font-extrabold text-gray-900">Why Only 1.5% of Dentists Offer Sleep Medicine</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+        1 in 5 of your patients need sleep apnea treatment—but these barriers keep you from helping them
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div *ngFor="let problem of problems"
+           class="flex gap-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100
+                  hover:shadow-primary transition-all duration-300">
+        <div class="flex-shrink-0">
+          <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-light rounded-xl
+                      flex items-center justify-center shadow-md">
+            <mat-icon class="text-white text-3xl">{{ problem.icon }}</mat-icon>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">{{ problem.title }}</h3>
+          <p class="text-gray-600">{{ problem.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founders Section -->
+<section class="py-16 px-4 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border
+                  border-primary/30 rounded-full mb-6">
+        <mat-icon class="text-primary">school</mat-icon>
+        <span class="text-sm font-semibold text-primary">Built by Experts</span>
+      </div>
+
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+        Built by Sleep Medicine Experts Who Understand Your Challenges
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Enable Sleep was created by practitioners who have successfully navigated the complexities of dental sleep medicine
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div *ngFor="let member of team"
+           class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100
+                  hover:shadow-primary transition-all duration-300">
+        <div class="text-center mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full
+                      flex items-center justify-center mx-auto mb-4 shadow-md">
+            <mat-icon class="text-white text-5xl">medical_services</mat-icon>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">{{ member.name }}</h3>
+          <p class="text-primary font-semibold text-sm">{{ member.title }}</p>
+        </div>
+        <ul class="space-y-3">
+          <li *ngFor="let achievement of member.achievements" class="flex items-start gap-3">
+            <mat-icon class="text-accent-green flex-shrink-0 text-lg">check_circle</mat-icon>
+            <span class="text-gray-600 text-sm">{{ achievement }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions Section -->
+<section class="py-16 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border
+                  border-primary/30 rounded-full mb-6">
+        <mat-icon class="text-primary">check_circle</mat-icon>
+        <span class="text-sm font-semibold text-primary">The Solution</span>
+      </div>
+
+      <h2 class="text-4xl font-extrabold text-gray-900 mb-4">One Platform. Complete Sleep Medicine Workflows.</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Built by dental sleep medicine experts who've successfully treated thousands of patients. Every feature solves a real barrier dentists face.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let solution of solutions"
+           class="p-6 bg-white rounded-2xl shadow-lg border border-gray-100
+                  hover:shadow-primary transition-all duration-300
+                  hover:-translate-y-1">
+        <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-light rounded-xl
+                    flex items-center justify-center mb-4 shadow-md">
+          <mat-icon class="text-white text-3xl">{{ solution.icon }}</mat-icon>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">{{ solution.title }}</h3>
+        <p class="text-sm text-gray-600">{{ solution.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white py-20 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border-2
+                border-primary rounded-full mb-8 animate-pulse">
+      <mat-icon>celebration</mat-icon>
+      <span class="font-semibold">Be Part of Our Launch</span>
+    </div>
+
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Ready to Get Started?</h2>
+    <p class="text-xl text-gray-300 mb-12">
+      Join the waitlist to get early access and help shape the platform
+    </p>
+
+    <div class="mb-8">
+      <app-email-capture></app-email-capture>
+    </div>
+
+    <p class="text-sm text-gray-400 flex items-center justify-center gap-2">
+      <mat-icon class="text-primary">verified_user</mat-icon>
+      <span>No spam, unsubscribe anytime. HIPAA-compliant.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-8">
+      <h3 class="text-2xl font-bold text-white mb-2">Enable Sleep</h3>
+      <p class="text-gray-400">Empowering dentists to close the sleep apnea diagnosis gap</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 text-sm">
+      <a routerLink="/privacy" class="hover:text-primary transition-colors">Privacy Policy</a>
+      <a routerLink="/terms" class="hover:text-primary transition-colors">Terms of Service</a>
+      <a href="mailto:info@enablesleep.com" class="hover:text-primary transition-colors">Contact</a>
+    </div>
+
+    <div class="text-center border-t border-gray-700 pt-8">
+      <p class="flex items-center justify-center gap-2 text-sm mb-2">
+        <mat-icon class="text-primary">lock</mat-icon>
+        <span>HIPAA-compliant & secure</span>
+      </p>
+      <p class="text-gray-500 text-sm">© {{ currentYear }} Enable Sleep. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+// Comprehensive fix for Material form field prefix divider lines
+::ng-deep .mat-mdc-form-field {
+  // Hide the prefix divider line
+  .mat-mdc-form-field-icon-prefix {
+    border-right: none !important;
+    padding-right: 12px !important;
+    margin-right: 8px !important;
+  }
+
+  // Remove all vertical dividers in form fields
+  .mat-mdc-form-field-infix::before,
+  .mat-mdc-form-field-infix::after {
+    display: none !important;
+    border: none !important;
+  }
+
+  .mat-mdc-text-field-wrapper {
+    padding-left: 0 !important;
+  }
+
+  .mat-mdc-form-field-icon-prefix + * {
+    padding-left: 0 !important;
+  }
+
+  // Remove any border-left on prefix content
+  .mat-mdc-form-field-icon-prefix::after,
+  .mat-mdc-form-field-icon-prefix::before {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+  }
+
+  // Target Material 3 specific divider classes
+  .mdc-text-field__affix--prefix::after,
+  .mdc-text-field__affix--prefix::before {
+    display: none !important;
+    border: none !important;
+  }
+
+  // Remove vertical divider elements
+  .mat-divider-vertical {
+    display: none !important;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,91 @@
+// Angular Material theme (Material 3 API - must come before Tailwind)
+@use '@angular/material' as mat;
+
+// Define theme with Material 3
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$orange-palette,
+      tertiary: mat.$violet-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+// Tailwind CSS (must come after @use rules)
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: var(--mat-sys-on-surface);
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+// Remove Material form field icon prefix dividers globally - AGGRESSIVE FIX
+.mat-mdc-form-field {
+  .mat-mdc-form-field-icon-prefix,
+  .mdc-text-field__icon--leading {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+  }
+
+  // Remove vertical line after prefix icons
+  .mat-mdc-form-field-icon-prefix::after,
+  .mat-mdc-form-field-icon-prefix::before,
+  .mdc-text-field__affix--prefix::after,
+  .mdc-text-field__affix--prefix::before {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  // Material 3 outline specific fixes
+  .mdc-text-field--outlined {
+    .mdc-text-field__affix--prefix {
+      padding-right: 12px !important;
+      border-right: none !important;
+    }
+  }
+
+  // Hide any divider elements
+  .mat-divider-vertical,
+  .mdc-notched-outline__leading + .mat-mdc-form-field-icon-prefix::after {
+    display: none !important;
+  }
+}
+
+// Accessibility - reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
