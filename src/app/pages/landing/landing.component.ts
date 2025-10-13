@@ -93,9 +93,9 @@ export class LandingComponent {
       title: 'Chief Dental Officer & Co-Founder',
       image: '/assets/logos/team/dr-miller.jpg',
       achievements: [
-        'Owner/operator of Stillwater Dental and Sleep Better Bend Clinic in Bend, Oregon',
-        'Only Diplomat by the American Academy of Dental Sleep Medicine in Central Oregon',
-        'Built thriving dental sleep medicine practice from ground up'
+        { text: 'Owner/operator of Stillwater Dental and Sleep Better Bend Clinic in Bend, Oregon' },
+        { text: 'Only Diplomat by the American Academy of Dental Sleep Medicine in Central Oregon' },
+        { text: 'Built thriving dental sleep medicine practice from ground up' }
       ]
     },
     {
@@ -103,9 +103,13 @@ export class LandingComponent {
       title: 'Chief Sleep Officer & Co-Founder',
       image: '/assets/logos/team/dr-zelk.jpg',
       achievements: [
-        '15+ years in dental sleep medicine',
-        'Sees hundreds of sleep medicine patients monthly via telemedicine',
-        'Helped create current diagnosis billing codes insurance companies use (G47.33)'
+        { text: '15+ years in dental sleep medicine' },
+        { text: 'Sees hundreds of sleep medicine patients monthly via telemedicine' },
+        { text: 'Helped create current diagnosis billing codes insurance companies use (G47.33)' },
+        {
+          text: 'Co-author of "Beautiful Faces: The Architects of Attractiveness and Breathing"',
+          link: 'https://www.amazon.com/Beautiful-Faces-Architects-Attractiveness-Breathing/dp/B0DSS3T9SX'
+        }
       ]
     }
   ];
