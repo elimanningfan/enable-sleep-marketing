@@ -23,14 +23,12 @@ export class LandingComponent {
 
   stats = [
     { value: '84 Million', label: 'Americans estimated to have sleep-disordered breathing' },
-    { value: 'Rapidly Increasing', label: 'Prevalence rising due to aging populations and obesity' },
-    { value: '90% Compliance', label: 'With oral appliances vs. 17% with CPAP after 5 years' }
+    { value: 'Rapidly Increasing', label: 'Prevalence rising due to aging populations and obesity' }
   ];
 
   financialStats = [
     { value: '~$2,000', label: 'Profit per patient for compliant oral appliance therapy' },
-    { value: '1 in 5', label: 'Adult patients in dental offices have sleep apnea' },
-    { value: '$10,000+', label: 'Potential additional monthly revenue from just 5 patients' }
+    { value: '1 in 5', label: 'Adult patients in dental offices have sleep apnea' }
   ];
 
   problems = [
@@ -93,6 +91,7 @@ export class LandingComponent {
     {
       name: 'Dr. Tran Miller-Quach',
       title: 'Chief Dental Officer & Co-Founder',
+      image: '/assets/logos/team/dr-miller.jpg',
       achievements: [
         'Owner/operator of Stillwater Dental and Sleep Better Bend Clinic in Bend, Oregon',
         'Only Diplomat by the American Academy of Dental Sleep Medicine in Central Oregon',
@@ -102,6 +101,7 @@ export class LandingComponent {
     {
       name: 'Dr. Joseph Zelk',
       title: 'Chief Sleep Officer & Co-Founder',
+      image: '/assets/logos/team/dr-zelk.jpg',
       achievements: [
         '15+ years in dental sleep medicine',
         'Sees hundreds of sleep medicine patients monthly via telemedicine',

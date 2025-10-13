@@ -50,7 +50,7 @@ export class EmailCaptureComponent {
     this.emailForm = this.fb.group({
       name: [''],
       email: ['', [Validators.required, Validators.email]],
-      role: [''],
+      role: ['dentist'],
       notes: ['']
     });
   }

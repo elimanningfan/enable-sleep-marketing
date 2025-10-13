@@ -42,39 +42,80 @@ body {
   height: 100%;
 }
 
-// Remove Material form field icon prefix dividers globally - AGGRESSIVE FIX
+// Remove Material form field icon prefix dividers - ABSOLUTE NUCLEAR
 .mat-mdc-form-field {
-  .mat-mdc-form-field-icon-prefix,
-  .mdc-text-field__icon--leading {
-    border: none !important;
-    border-right: none !important;
-    border-left: none !important;
-  }
-
-  // Remove vertical line after prefix icons
-  .mat-mdc-form-field-icon-prefix::after,
-  .mat-mdc-form-field-icon-prefix::before,
-  .mdc-text-field__affix--prefix::after,
-  .mdc-text-field__affix--prefix::before {
-    content: none !important;
-    display: none !important;
-    border: none !important;
-    width: 0 !important;
-    height: 0 !important;
-  }
-
-  // Material 3 outline specific fixes
-  .mdc-text-field--outlined {
-    .mdc-text-field__affix--prefix {
-      padding-right: 12px !important;
-      border-right: none !important;
+  // Try a completely different approach: hide the divider by targeting any vertical line element
+  .mat-mdc-text-field-wrapper {
+    // Find and hide any child that's 1-2px wide (likely the divider)
+    > * {
+      &:not(.mat-mdc-form-field-flex) {
+        // If it's suspiciously narrow, it might be the divider
+        @media (min-width: 1px) {
+          &[style*="width: 1px"],
+          &[style*="width:1px"] {
+            display: none !important;
+          }
+        }
+      }
     }
   }
 
-  // Hide any divider elements
+  // Carpet bomb approach: kill everything related to prefix that could be a line
+  .mat-mdc-form-field-icon-prefix,
+  .mdc-text-field__icon--leading,
+  .mdc-text-field__affix--prefix,
+  [class*="prefix"] {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+
+    &::after,
+    &::before {
+      content: none !important;
+      display: none !important;
+      border: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      width: 0 !important;
+      height: 0 !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+
+    // Target any direct children that might be dividers
+    > * {
+      &:last-child {
+        border-right: none !important;
+
+        &::after,
+        &::before {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  // Nuclear option: hide any element between the icon and input that's really thin
+  .mat-mdc-form-field-icon-prefix + * {
+    &::before {
+      display: none !important;
+      opacity: 0 !important;
+    }
+  }
+
+  // Divider classes
   .mat-divider-vertical,
-  .mdc-notched-outline__leading + .mat-mdc-form-field-icon-prefix::after {
+  [class*="divider"] {
     display: none !important;
+    opacity: 0 !important;
+  }
+
+  // Preserve outline
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__trailing,
+  .mdc-notched-outline__notch {
+    border-style: solid !important;
+    border-width: 1px !important;
   }
 }
 

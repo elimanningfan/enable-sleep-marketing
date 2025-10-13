@@ -1,4 +1,4 @@
-<div class="max-w-md mx-auto">
+<div class="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto">
   <!-- Success State -->
   <div *ngIf="isSubmitted" class="text-center animate-fade-in bg-white p-8 rounded-2xl shadow-2xl">
     <div class="mb-6">
@@ -24,16 +24,14 @@
       <p class="text-sm text-gray-600">Get early access and updates on our launch</p>
     </div>
 
-    <mat-form-field appearance="outline" class="w-full">
+    <mat-form-field appearance="fill" class="w-full">
       <mat-label>Name (Optional)</mat-label>
       <input matInput formControlName="name" placeholder="Dr. Jane Smith">
-      <mat-icon matPrefix>person</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="w-full">
+    <mat-form-field appearance="fill" class="w-full">
       <mat-label>Email Address</mat-label>
       <input matInput type="email" formControlName="email" placeholder="jane@example.com" required>
-      <mat-icon matPrefix>email</mat-icon>
       <mat-error *ngIf="emailForm.get('email')?.hasError('required')">
         Email is required
       </mat-error>
@@ -42,7 +40,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="w-full">
+    <mat-form-field appearance="fill" class="w-full">
       <mat-label>Role (Optional)</mat-label>
       <mat-select formControlName="role">
         <mat-option [value]="''">Prefer not to say</mat-option>
@@ -50,15 +48,13 @@
           {{ role.label }}
         </mat-option>
       </mat-select>
-      <mat-icon matPrefix>badge</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="w-full">
+    <mat-form-field appearance="fill" class="w-full">
       <mat-label>Questions or Notes (Optional)</mat-label>
       <textarea matInput formControlName="notes"
                 placeholder="Any questions about Enable Sleep or your practice needs?"
                 rows="3"></textarea>
-      <mat-icon matPrefix>message</mat-icon>
     </mat-form-field>
 
     <div *ngIf="errorMessage" class="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded">
