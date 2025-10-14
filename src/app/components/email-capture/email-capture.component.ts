@@ -39,7 +39,9 @@ export class EmailCaptureComponent {
     { value: 'Dentist', label: 'Dentist' },
     { value: 'Office Manager', label: 'Office Manager' },
     { value: 'Practice Staff', label: 'Practice Staff' },
-    { value: 'Practice Owner', label: 'Practice Owner' }
+    { value: 'Practice Owner', label: 'Practice Owner' },
+    { value: 'Sleep Specialist', label: 'Sleep Specialist' },
+    { value: 'Other', label: 'Other' }
   ];
 
   constructor(
