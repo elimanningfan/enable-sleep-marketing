@@ -103,9 +103,9 @@ export class LandingComponent {
       title: 'Chief Sleep Officer & Co-Founder',
       image: '/assets/logos/team/dr-zelk.jpg',
       achievements: [
-        { text: '15+ years in dental sleep medicine' },
-        { text: 'Sees hundreds of sleep medicine patients monthly via telemedicine' },
-        { text: 'Helped create current diagnosis billing codes insurance companies use (G47.33)' },
+        { text: '20+ years in dental sleep medicine' },
+        { text: 'His telemedicine service sees patients in all 50 states' },
+        { text: 'Expert in mandibular advancement device billing codes (HCPCS E0486)' },
         {
           text: 'Co-author of "Beautiful Faces: The Architects of Attractiveness and Breathing"',
           link: 'https://www.amazon.com/Beautiful-Faces-Architects-Attractiveness-Breathing/dp/B0DSS3T9SX'
