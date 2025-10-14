@@ -36,11 +36,10 @@ export class EmailCaptureComponent {
   errorMessage = '';
 
   roles = [
-    { value: 'dentist', label: 'Dentist' },
-    { value: 'dental-staff', label: 'Dental Office Staff' },
-    { value: 'sleep-specialist', label: 'Sleep Medicine Specialist' },
-    { value: 'practice-owner', label: 'Practice Owner/Manager' },
-    { value: 'other', label: 'Other' }
+    { value: 'Dentist', label: 'Dentist' },
+    { value: 'Office Manager', label: 'Office Manager' },
+    { value: 'Practice Staff', label: 'Practice Staff' },
+    { value: 'Practice Owner', label: 'Practice Owner' }
   ];
 
   constructor(
@@ -50,7 +49,7 @@ export class EmailCaptureComponent {
     this.emailForm = this.fb.group({
       name: [''],
       email: ['', [Validators.required, Validators.email]],
-      role: ['dentist'],
+      role: ['Dentist'],
       notes: ['']
     });
   }
