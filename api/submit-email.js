@@ -1,14 +1,13 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import Airtable from 'airtable';
+const Airtable = require('airtable');
 
 // Rate limiting store (in-memory for simplicity)
-const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
+const rateLimitStore = new Map();
 
 // Rate limit: 5 requests per hour per IP
 const RATE_LIMIT = 5;
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour in milliseconds
 
-function checkRateLimit(ip: string): boolean {
+function checkRateLimit(ip) {
   const now = Date.now();
   const record = rateLimitStore.get(ip);
 
@@ -25,7 +24,7 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+module.exports = async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -40,8 +39,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     // Get client IP for rate limiting
-    const clientIp = (req.headers['x-forwarded-for'] as string)?.split(',')[0] ||
-                     (req.headers['x-real-ip'] as string) ||
+    const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0] ||
+                     req.headers['x-real-ip'] ||
                      'unknown';
 
     // Check rate limit
@@ -93,7 +92,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: 'Successfully submitted!'
     });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error submitting to Airtable:', error);
 
     // Don't expose internal errors to client
@@ -101,4 +100,4 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: 'Failed to submit. Please try again later.'
     });
   }
-}
+};
