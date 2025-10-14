@@ -4,25 +4,23 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 export interface WaitlistSubmission {
-  name: string;
+  name?: string;
   email: string;
-  practiceType: string;
+  role?: string;
+  notes?: string;
 }
 
 export interface WaitlistResponse {
   success: boolean;
   message?: string;
   error?: string;
-  duplicate?: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailCaptureService {
-  private apiUrl = environment.production
-    ? '/api/waitlist'
-    : 'http://localhost:3000/api/waitlist';
+  private apiUrl = '/api/submit-email';
 
   constructor(private http: HttpClient) {}
 
