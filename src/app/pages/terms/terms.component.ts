@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-terms',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './terms.component.html',
   styleUrls: ['./terms.component.scss']
 })
-export class TermsComponent {
-  lastUpdated = 'March 5, 2026';
+export class TermsComponent implements OnInit {
+  readonly canonicalUrl = 'https://docs.enablesleep.com/terms-of-service';
+
+  ngOnInit(): void {
+    window.location.replace(this.canonicalUrl);
+  }
 }
